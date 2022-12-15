@@ -4,7 +4,7 @@ const Modal = function (team) {
   this.teamName = null;
 
   this.wrapper = document.getElementById("wrapper");
-  this.modal = document.getElementById("modal");
+  this.modal = document.getElementById("background");
   this.modal.classList.add("open");
 
   this._setupElements();
@@ -124,11 +124,13 @@ Confettiful.prototype._closeModal = function () {
   });
 };
 
+// create the instances
 const openModal = (team) => {
-  const modal = new Modal(team);
-  const conf = new Confettiful(document.getElementById("wrapper"));
+  new Modal(team);
+  new Confettiful(document.getElementById("wrapper"));
 };
 
+// execute the confetti
 openModal({
   name: "3",
   members: ["Anna", "Bob", "Charlie"],
